@@ -48,6 +48,30 @@ jobs:
     permissions:
       contents: read
     steps:
+      - name: Patch retired Projects Classic support in upstream renderer
+        if: matrix.module == 'achievements'
+        run: |
+          docker pull ghcr.io/lowlighter/metrics:v3.35-beta
+          docker run --name profile-metrics-patch --entrypoint node ghcr.io/lowlighter/metrics:v3.35-beta -e '
+          const fs = require("node:fs");
+          const query = "/metrics/source/plugins/achievements/queries/achievements.graphql";
+          const users = "/metrics/source/plugins/achievements/list/users.mjs";
+          let q = fs.readFileSync(query, "utf8");
+          const start = q.indexOf("    projects(first:");
+          const end = q.indexOf("    packages(first:", start);
+          if (start < 0 || end < start) throw Error("Upstream Projects Classic query changed");
+          q = q.slice(0, start) + q.slice(end);
+          fs.writeFileSync(query, q);
+          let u = fs.readFileSync(users, "utf8");
+          const manager = u.indexOf("  //Manager");
+          const reviewer = u.indexOf("  //Reviewer", manager);
+          if (manager < 0 || reviewer < manager) throw Error("Upstream manager achievement changed");
+          u = u.slice(0, manager) + u.slice(reviewer);
+          fs.writeFileSync(users, u);
+          console.log("Removed retired Projects Classic query and its Manager achievement; all other Metrics achievements retained.");
+          '
+          docker commit profile-metrics-patch metrics:3.35.0-beta
+          docker rm profile-metrics-patch
       - name: Render profile module
         uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
         with:
@@ -55,6 +79,7 @@ jobs:
           user: guitar0788
           filename: metrics-${{ matrix.module }}.svg
           output_action: none
+          use_prebuilt_image: ${{ matrix.module != 'achievements' }}
           base: ""
           template: classic
           config_timezone: Asia/Shanghai
@@ -64,7 +89,7 @@ jobs:
           plugins_errors_fatal: yes
           retries: 1
           retries_delay: 0
-          debug: yes
+          debug: no
           plugin_isocalendar: ${{ matrix.module == 'calendar' }}
           plugin_isocalendar_duration: full-year
           plugin_languages: ${{ matrix.module == 'languages' }}
