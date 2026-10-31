@@ -42,19 +42,19 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 ## 📅 Contribution Calendar
 
 <p align="center">
-  <img src="./assets/metrics-calendar.svg" alt="guitar0788's full-year isometric GitHub contribution calendar." width="100%">
+  <img src="./assets/metrics-calendar.svg" alt="guitar0788's full-year isometric GitHub contribution calendar." width="480">
 </p>
 
 ## 🈷️ Language Activity
 
 <p align="center">
-  <img src="./assets/metrics-languages.svg" alt="Languages used across guitar0788's public repositories." width="100%">
+  <img src="./assets/metrics-languages.svg" alt="Languages used across guitar0788's public repositories." width="480">
 </p>
 
 ## 🏆 Achievements
 
 <p align="center">
-  <img src="./assets/metrics-achievements.svg" alt="Compact achievement badges based on guitar0788's public GitHub activity." width="100%">
+  <img src="./assets/metrics-achievements.svg" alt="Compact achievement badges based on guitar0788's public GitHub activity." width="480">
 </p>
 
 <p align="center"><sub>Updated daily with Metrics. Achievement badges are community-generated.</sub></p>
