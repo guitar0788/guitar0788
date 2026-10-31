@@ -1,0 +1,165 @@
+name: Update profile metrics
+
+on:
+  schedule:
+    - cron: '19 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/metrics.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      configured: ${{ steps.token.outputs.configured }}
+    steps:
+      - name: Check Metrics token
+        id: token
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -n "$METRICS_TOKEN" ]; then
+            echo 'configured=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'configured=false' >> "$GITHUB_OUTPUT"
+            echo 'Add a scopeless classic PAT as the repository Actions secret METRICS_TOKEN, then run this workflow.'
+            echo '### Setup required: METRICS_TOKEN' >> "$GITHUB_STEP_SUMMARY"
+            echo 'Add a scopeless classic personal access token as the repository Actions secret METRICS_TOKEN, then run this workflow. The current profile remains available until all new images are generated.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  generate:
+    needs: check
+    if: needs.check.outputs.configured == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        module: [calendar, languages, achievements]
+    permissions:
+      contents: read
+    steps:
+      - name: Render profile module
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: guitar0788
+          filename: metrics-${{ matrix.module }}.svg
+          output_action: none
+          base: ""
+          template: classic
+          config_timezone: Asia/Shanghai
+          config_animations: yes
+          repositories_affiliations: owner
+          repositories_forks: no
+          plugins_errors_fatal: yes
+          plugin_isocalendar: ${{ matrix.module == 'calendar' }}
+          plugin_isocalendar_duration: full-year
+          plugin_languages: ${{ matrix.module == 'languages' }}
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 6
+          plugin_languages_threshold: 1%
+          plugin_achievements: ${{ matrix.module == 'achievements' }}
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          plugin_achievements_limit: 8
+      - name: Validate generated image
+        env:
+          MODULE: ${{ matrix.module }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from xml.etree import ElementTree
+          path = Path('/metrics_renders') / ('metrics-' + os.environ['MODULE'] + '.svg')
+          assert path.stat().st_size > 1000, 'Missing or empty image'
+          root = ElementTree.parse(path).getroot()
+          assert root.tag.endswith('svg'), 'Invalid SVG'
+          print(path.name, path.stat().st_size, 'bytes')
+          PY
+      - name: Transfer generated image
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: profile-metrics-${{ matrix.module }}
+          path: /metrics_renders/metrics-${{ matrix.module }}.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check out current profile
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - name: Download all three modules
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: profile-metrics-*
+          merge-multiple: true
+          path: assets
+      - name: Activate new profile modules after successful generation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+          for module in ('calendar', 'languages', 'achievements'):
+              path = Path('assets') / ('metrics-' + module + '.svg')
+              assert path.stat().st_size > 1000
+              assert ElementTree.parse(path).getroot().tag.endswith('svg')
+          readme = Path('README.md')
+          text = readme.read_text()
+          start = text.find('## 🧱 Contribution Breakout')
+          if start != -1:
+              end = text.find('\n---', start)
+              assert end != -1, 'Cannot find end of old contribution section'
+              replacement = """## 📅 Contribution Calendar
+
+          <p align="center">
+            <img src="./assets/metrics-calendar.svg" alt="guitar0788's full-year isometric GitHub contribution calendar." width="100%">
+          </p>
+
+          ## 🈷️ Language Activity
+
+          <p align="center">
+            <img src="./assets/metrics-languages.svg" alt="Languages used across guitar0788's public repositories." width="100%">
+          </p>
+
+          ## 🏆 Achievements
+
+          <p align="center">
+            <img src="./assets/metrics-achievements.svg" alt="Compact achievement badges based on guitar0788's public GitHub activity." width="100%">
+          </p>
+
+          <p align="center"><sub>Updated daily with Metrics. Achievement badges are community-generated.</sub></p>
+          """
+              text = text[:start] + replacement + text[end:]
+              readme.write_text(text)
+          else:
+              assert './assets/metrics-calendar.svg' in text, 'Profile layout changed; review before activation'
+          PY
+      - name: Publish refreshed profile
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/metrics-calendar.svg assets/metrics-languages.svg assets/metrics-achievements.svg README.md
+          if git diff --cached --quiet; then
+            echo 'Profile metrics are already up to date.'
+            exit 0
+          fi
+          git commit -m 'chore(profile): update isometric calendar, languages and achievements'
+          git push origin HEAD:main
