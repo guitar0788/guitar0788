@@ -39,25 +39,19 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 
 ---
 
-## 🧰 Modding Toolkit
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=cs,git,github,vscode&amp;theme=dark&amp;perline=4" alt="Tools used in my modding projects: C#, Git, GitHub, and Visual Studio Code." height="48">
-</p>
-
-<p align="center"><sub>Tools I use and explore while building game mods and localization projects.</sub></p>
-
----
-
 <p>
   <img src="./assets/profile-calendar.svg" alt="Contribution calendar with a green isometric graph and current activity stats." width="100%">
+</p>
+
+<p>
+  <img src="./assets/profile-languages.svg" alt="Language activity across public and private repositories." width="100%">
 </p>
 
 <p>
   <img src="./assets/profile-achievements.svg" alt="Community achievement cards based on public GitHub activity." width="100%">
 </p>
 
-<p align="center"><sub>Refreshed daily · Community achievement badges</sub></p>
+<p align="center"><sub>Refreshed daily · Language totals include private repositories · Community achievement badges</sub></p>
 
 ---
 
