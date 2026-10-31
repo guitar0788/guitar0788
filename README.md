@@ -48,8 +48,10 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 ## 🈷️ Language Activity
 
 <p align="center">
-  <img src="./assets/metrics-languages.svg" alt="Languages used across guitar0788's public repositories." width="480">
+  <img src="./assets/metrics-languages.svg" alt="Aggregated language usage across guitar0788's public and private repositories." width="480">
 </p>
+
+<p align="center"><sub>Aggregated language statistics include public and private repositories.</sub></p>
 
 ## 🏆 Achievements
 
