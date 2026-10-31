@@ -1,13 +1,7 @@
-name: Update Breakout contribution animation
+name: Breakout animation (archived; manual only)
 
 on:
-  schedule:
-    - cron: '19 4 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/breakout.yml'
 
 permissions:
   contents: read
