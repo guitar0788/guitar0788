@@ -70,7 +70,7 @@ jobs:
           fs.writeFileSync(users, u);
           console.log("Removed retired Projects Classic query and its Manager achievement; all other Metrics achievements retained.");
           '
-          docker commit profile-metrics-patch metrics:3.35.0-beta
+          docker commit --change 'ENTRYPOINT ["/bin/sh", "-c", "node /metrics/source/app/action/index.mjs"]' --change 'CMD []' profile-metrics-patch metrics:3.35.0-beta
           docker rm profile-metrics-patch
       - name: Render profile module
         uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
