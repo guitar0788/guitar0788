@@ -56,8 +56,8 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 ---
 
 <p align="center">
-  <a href="https://github.com/guitar0788/guitar0788/issues/2"><b>🎮 Leave a message in the Workshop Guestbook →</b></a><br>
-  <sub>Say hello, share what you are playing, or suggest a modding idea.</sub><br><br>
+  <img src="https://komarev.com/ghpvc/?username=guitar0788&amp;label=Workshop%20visits&amp;color=238636&amp;style=flat-square" alt="GitHub profile visit counter">
+  <br>
   <b>Thanks for stopping by. Enjoy your stay!</b><br>
   <sub>The next quest starts with a game I love.</sub>
 </p>
