@@ -31,7 +31,7 @@ jobs:
             echo 'configured=true' >> "$GITHUB_OUTPUT"
           else
             echo 'configured=false' >> "$GITHUB_OUTPUT"
-            echo 'Add a scopeless classic PAT as the repository Actions secret METRICS_TOKEN, then run this workflow.'
+            echo 'Add a classic PAT as the repository Actions secret METRICS_TOKEN, then run this workflow.'
             echo '### Setup required: METRICS_TOKEN' >> "$GITHUB_STEP_SUMMARY"
             echo 'Add a scopeless classic personal access token as the repository Actions secret METRICS_TOKEN, then run this workflow. The current profile remains available until all new images are generated.' >> "$GITHUB_STEP_SUMMARY"
           fi
@@ -164,7 +164,7 @@ jobs:
           ## 🈷️ Language Activity
 
           <p align="center">
-            <img src="./assets/metrics-languages.svg" alt="Languages used across guitar0788's public repositories." width="100%">
+            <img src="./assets/metrics-languages.svg" alt="Aggregated language usage across guitar0788's public and private repositories." width="100%">
           </p>
 
           ## 🏆 Achievements
