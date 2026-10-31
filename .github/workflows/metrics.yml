@@ -62,6 +62,9 @@ jobs:
           repositories_affiliations: owner
           repositories_forks: no
           plugins_errors_fatal: yes
+          retries: 1
+          retries_delay: 0
+          debug: yes
           plugin_isocalendar: ${{ matrix.module == 'calendar' }}
           plugin_isocalendar_duration: full-year
           plugin_languages: ${{ matrix.module == 'languages' }}
