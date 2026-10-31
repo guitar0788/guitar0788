@@ -39,6 +39,16 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 
 ---
 
+## 🧰 Modding Toolkit
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=cs,git,github,vscode&amp;theme=dark&amp;perline=4" alt="Tools used in my modding projects: C#, Git, GitHub, and Visual Studio Code." height="48">
+</p>
+
+<p align="center"><sub>Tools I use and explore while building game mods and localization projects.</sub></p>
+
+---
+
 <p>
   <img src="./assets/profile-calendar.svg" alt="Contribution calendar with a green isometric graph and current activity stats." width="100%">
 </p>
@@ -56,6 +66,8 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 ---
 
 <p align="center">
+  <img src="https://komarev.com/ghpvc/?username=guitar0788&amp;label=Workshop%20visits&amp;color=238636&amp;style=flat-square" alt="GitHub profile visit counter">
+  <br>
   <b>Thanks for stopping by. Enjoy your stay!</b><br>
   <sub>The next quest starts with a game I love.</sub>
 </p>
