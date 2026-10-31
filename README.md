@@ -39,15 +39,25 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 
 ---
 
-## 🧱 Contribution Breakout
+## 📅 Contribution Calendar
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/breakout-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/breakout-contribution-graph.svg">
-  <img alt="Animated Breakout game generated from guitar0788's GitHub contribution calendar." src="./assets/breakout-contribution-graph.svg" width="100%">
-</picture>
+<p align="center">
+  <img src="./assets/metrics-calendar.svg" alt="guitar0788's full-year isometric GitHub contribution calendar." width="100%">
+</p>
 
-<p align="center"><sub>My GitHub contributions, one brick at a time. Updated daily.</sub></p>
+## 🈷️ Language Activity
+
+<p align="center">
+  <img src="./assets/metrics-languages.svg" alt="Languages used across guitar0788's public repositories." width="100%">
+</p>
+
+## 🏆 Achievements
+
+<p align="center">
+  <img src="./assets/metrics-achievements.svg" alt="Compact achievement badges based on guitar0788's public GitHub activity." width="100%">
+</p>
+
+<p align="center"><sub>Updated daily with Metrics. Achievement badges are community-generated.</sub></p>
 
 ---
 
