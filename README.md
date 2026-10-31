@@ -54,20 +54,16 @@ A pediatric mod for *Project Hospital*, with compatibility with the base game, D
 </p>
 
 <p>
-  <img src="./assets/profile-languages.svg" alt="Language activity across public and private repositories." width="100%">
-</p>
-
-<p>
   <img src="./assets/profile-achievements.svg" alt="Community achievement cards based on public GitHub activity." width="100%">
 </p>
 
-<p align="center"><sub>Refreshed daily · Language totals include private repositories · Community achievement badges</sub></p>
+<p align="center"><sub>Refreshed daily · Community achievement badges</sub></p>
 
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=guitar0788&amp;label=Workshop%20visits&amp;color=238636&amp;style=flat-square" alt="GitHub profile visit counter">
-  <br>
+  <a href="https://github.com/guitar0788/guitar0788/issues/2"><b>🎮 Leave a message in the Workshop Guestbook →</b></a><br>
+  <sub>Say hello, share what you are playing, or suggest a modding idea.</sub><br><br>
   <b>Thanks for stopping by. Enjoy your stay!</b><br>
   <sub>The next quest starts with a game I love.</sub>
 </p>
