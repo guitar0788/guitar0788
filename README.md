@@ -3,8 +3,12 @@
 </p>
 
 <p align="center">
-  <b>A player making mods for the Steam games I love.</b><br>
-  Game modding · Simplified Chinese localization · Learning by creating
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=22&amp;duration=3200&amp;pause=1600&amp;center=true&amp;vCenter=true&amp;width=720&amp;height=52&amp;lines=Making+mods+for+the+games+I+love.;Building+my+next+Steam+Workshop+project.&amp;color=7EE787">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=22&amp;duration=3200&amp;pause=1600&amp;center=true&amp;vCenter=true&amp;width=720&amp;height=52&amp;lines=Making+mods+for+the+games+I+love.;Building+my+next+Steam+Workshop+project.&amp;color=238636">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=22&amp;duration=3200&amp;pause=1600&amp;center=true&amp;vCenter=true&amp;width=720&amp;height=52&amp;lines=Making+mods+for+the+games+I+love.;Building+my+next+Steam+Workshop+project.&amp;color=238636" alt="Making mods for the games I love. Building my next Steam Workshop project." width="100%">
+  </picture><br>
+  <sub>Game modding · Simplified Chinese localization · Learning by creating</sub>
 </p>
 
 ---
