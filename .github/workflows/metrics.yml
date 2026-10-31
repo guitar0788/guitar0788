@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/metrics.yml'
+      - 'scripts/render-profile.py'
 
 permissions:
   contents: read
@@ -140,6 +141,8 @@ jobs:
           pattern: profile-metrics-*
           merge-multiple: true
           path: assets
+      - name: Apply pixel workshop theme to fresh data
+        run: python3 scripts/render-profile.py
       - name: Activate new profile modules after successful generation
         run: |
           python3 - <<'PY'
@@ -184,10 +187,11 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/metrics-calendar.svg assets/metrics-languages.svg assets/metrics-achievements.svg README.md
+          git add assets/metrics-calendar.svg assets/metrics-languages.svg assets/metrics-achievements.svg assets/profile-calendar.svg assets/profile-languages.svg assets/profile-achievements.svg README.md
           if git diff --cached --quiet; then
             echo 'Profile metrics are already up to date.'
             exit 0
           fi
           git commit -m 'chore(profile): update isometric calendar, languages and achievements'
           git push origin HEAD:main
+
