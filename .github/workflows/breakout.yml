@@ -1,0 +1,79 @@
+name: Update Breakout contribution animation
+
+on:
+  schedule:
+    - cron: '19 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/breakout.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-breakout
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Generate light and dark Breakout animations
+        uses: abozanona/pacman-contribution-graph@7332e1de7903ab780c3692a4127a59cc13872daa # v5.3.2
+        with:
+          github_user_name: guitar0788
+          github_token: ${{ github.token }}
+          games: breakout
+          hide_month_labels: 'false'
+      - name: Check generated SVG files
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+          for name in ('breakout-contribution-graph.svg', 'breakout-contribution-graph-dark.svg'):
+              path = Path('dist') / name
+              assert path.stat().st_size > 1000, name
+              root = ElementTree.parse(path).getroot()
+              assert root.tag.endswith('svg'), name
+              print(name, path.stat().st_size, 'bytes: valid SVG')
+          PY
+      - name: Transfer generated images
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: breakout-images
+          path: dist/breakout-contribution-graph*.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+      - name: Download generated images
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: breakout-images
+          path: assets
+      - name: Commit refreshed animation
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/breakout-contribution-graph.svg assets/breakout-contribution-graph-dark.svg
+          if git diff --cached --quiet; then
+            echo 'Breakout animation is already up to date.'
+            exit 0
+          fi
+          git commit -m 'chore(profile): refresh Breakout contribution animation'
+          git push origin HEAD:main
