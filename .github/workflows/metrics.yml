@@ -181,7 +181,7 @@ jobs:
               text = text[:start] + replacement + text[end:]
               readme.write_text(text)
           else:
-              assert './assets/metrics-calendar.svg' in text, 'Profile layout changed; review before activation'
+              assert all(('./assets/profile-' + module + '.svg') in text for module in ('calendar', 'languages', 'achievements')), 'Profile layout changed; review before activation'
           PY
       - name: Publish refreshed profile
         run: |
