@@ -35,8 +35,6 @@ A Better Clinical Laboratory mod for *Project Hospital*, with compatibility with
 
 **Status:** In Development
 
-*Still in development. A public gameplay release is not yet available.*
-
 [Explore the project →](https://github.com/guitar0788/A-Better-Clinical-Laboratory)
 
 ---
