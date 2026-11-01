@@ -29,9 +29,17 @@ A community patch focused on missing translations and unclear Chinese text in *B
 
 [Explore the project →](https://github.com/guitar0788/Boardlike_Chinese-Language-Patch)
 
-### 🟨 Project Hospital — Pediatrics Mod
+### 🟥 Project Hospital — Pediatrics Mod
 
 A pediatric mod for *Project Hospital*, with compatibility with the base game, DLC, and other mods as a core design goal.
+
+**Status:** Blocked
+
+*I have encountered an issue regarding children's skeletons and models.*
+
+### 🟨 Project Hospital — A Better Clinical Laboratory Mod
+
+A Better Clinical Laboratory mod for *Project Hospital*, with compatibility with the base game, DLC, and other mods as a core design goal.
 
 **Status:** In Development
 
