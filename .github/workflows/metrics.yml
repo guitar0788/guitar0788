@@ -183,6 +183,23 @@ jobs:
           else:
               assert all(('./assets/profile-' + module + '.svg') in text for module in ('calendar', 'languages', 'achievements')), 'Profile layout changed; review before activation'
           PY
+      - name: Refresh README image cache keys after successful rendering
+        env:
+          PROFILE_CACHE_VERSION: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+          readme = Path('README.md')
+          text = readme.read_text(encoding='utf-8')
+          version = os.environ['PROFILE_CACHE_VERSION']
+          for module in ('calendar', 'languages', 'achievements'):
+              pattern = r'(\./assets/profile-' + module + r'\.svg)(?:\?v=[^"\s]*)?'
+              text, count = re.subn(pattern, lambda match: match.group(1) + '?v=' + version, text)
+              assert count >= 1, 'Missing README image reference: ' + module
+          readme.write_text(text, encoding='utf-8')
+          PY
       - name: Publish refreshed profile
         run: |
           git config user.name 'github-actions[bot]'
