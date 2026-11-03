@@ -40,15 +40,15 @@ A Better Clinical Laboratory mod for *Project Hospital*, with compatibility with
 ---
 
 <p>
-  <img src="./assets/profile-calendar.svg?v=41446052745-1" alt="Contribution calendar with a green isometric graph and current activity stats." width="100%">
+  <img src="./assets/profile-calendar.svg?v=41632306220-1" alt="Contribution calendar with a green isometric graph and current activity stats." width="100%">
 </p>
 
 <p>
-  <img src="./assets/profile-languages.svg?v=41446052745-1" alt="Language activity across public and private repositories." width="100%">
+  <img src="./assets/profile-languages.svg?v=41632306220-1" alt="Language activity across public and private repositories." width="100%">
 </p>
 
 <p>
-  <img src="./assets/profile-achievements.svg?v=41446052745-1" alt="Community achievement cards based on public GitHub activity." width="100%">
+  <img src="./assets/profile-achievements.svg?v=41632306220-1" alt="Community achievement cards based on public GitHub activity." width="100%">
 </p>
 
 <p align="center"><sub>Refreshed daily · Language totals include private repositories · Community achievement badges</sub></p>
