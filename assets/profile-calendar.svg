@@ -1950,13 +1950,18 @@
                                 <path fill="#8ee6a5" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,5.453061224489796 0,4.453061224489796 z" />
                                 <path fill="#8ee6a5" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,4.453061224489796 1.7,5.453061224489796 z" />
                             </g>
-                            <g transform="translate(-1.7, 6.020408163265307)">
+                            <g transform="translate(-1.7, 6.044897959183674)">
                                 <path fill="#58976c" d="M1.7,2 0,1 1.7,0 3.4,1 z" />
-                                <path fill="#58976c" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2.979591836734694 0,1.9795918367346939 z" />
-                                <path fill="#58976c" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1.9795918367346939 1.7,2.979591836734694 z" />
+                                <path fill="#58976c" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2.9551020408163264 0,1.9551020408163264 z" />
+                                <path fill="#58976c" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1.9551020408163264 1.7,2.9551020408163264 z" />
+                            </g>
+                            <g transform="translate(-3.4, 7.387755102040816)">
+                                <path fill="#41644e" d="M1.7,2 0,1 1.7,0 3.4,1 z" />
+                                <path fill="#41644e" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2.612244897959184 0,1.6122448979591837 z" />
+                                <path fill="#41644e" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1.6122448979591837 1.7,2.612244897959184 z" />
                             </g>
                         </g>
                     </g>
                 </svg>
-            <text x="728" y="112" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">CURRENT STREAK</text><text x="728" y="144" font-size="25" fill="#8ee6a5" text-anchor="start" font-weight="600">5 days</text><text x="728" y="194" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">BEST STREAK</text><text x="728" y="226" font-size="25" fill="#8ee6a5" text-anchor="start" font-weight="600">5 days</text><text x="728" y="276" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">MOST COMMITS / DAY</text><text x="728" y="308" font-size="25" fill="#e8c477" text-anchor="start" font-weight="600">245</text><text x="30" y="379" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">ONE YEAR OF BUILDING</text>
+            <text x="728" y="112" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">CURRENT STREAK</text><text x="728" y="144" font-size="25" fill="#8ee6a5" text-anchor="start" font-weight="600">6 days</text><text x="728" y="194" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">BEST STREAK</text><text x="728" y="226" font-size="25" fill="#8ee6a5" text-anchor="start" font-weight="600">6 days</text><text x="728" y="276" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">MOST COMMITS / DAY</text><text x="728" y="308" font-size="25" fill="#e8c477" text-anchor="start" font-weight="600">245</text><text x="30" y="379" font-size="11" fill="#96a9bd" text-anchor="start" font-weight="400">ONE YEAR OF BUILDING</text>
     </svg>
