@@ -56,7 +56,7 @@ A Better Clinical Laboratory mod for *Project Hospital*, with compatibility with
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=guitar0788&amp;label=Workshop%20visits&amp;color=238636&amp;style=flat-square" alt="GitHub profile visit counter">
+  <img src="https://workshop-visitor-terminal-staging.fangcui2007.workers.dev/v1/counters/v0e6809971bd99056bead98b4.svg" alt="Visitor counter">
   <br>
   <b>Thanks for stopping by. Enjoy your stay!</b><br>
   <sub>The next quest starts with a game I love.</sub>
