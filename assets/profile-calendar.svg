@@ -1960,6 +1960,26 @@
                                 <path fill="#8ee6a5" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2.024489795918367 0,1.0244897959183674 z" />
                                 <path fill="#8ee6a5" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1.0244897959183674 1.7,2.024489795918367 z" />
                             </g>
+                            <g transform="translate(-5.1, 9)">
+                                <path fill="#233649" d="M1.7,2 0,1 1.7,0 3.4,1 z" />
+                                <path fill="#233649" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2 0,1 z" />
+                                <path fill="#233649" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1 1.7,2 z" />
+                            </g>
+                            <g transform="translate(-6.8, 10)">
+                                <path fill="#233649" d="M1.7,2 0,1 1.7,0 3.4,1 z" />
+                                <path fill="#233649" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2 0,1 z" />
+                                <path fill="#233649" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1 1.7,2 z" />
+                            </g>
+                            <g transform="translate(-8.5, 11)">
+                                <path fill="#233649" d="M1.7,2 0,1 1.7,0 3.4,1 z" />
+                                <path fill="#233649" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2 0,1 z" />
+                                <path fill="#233649" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1 1.7,2 z" />
+                            </g>
+                            <g transform="translate(-10.2, 11.975510204081633)">
+                                <path fill="#8ee6a5" d="M1.7,2 0,1 1.7,0 3.4,1 z" />
+                                <path fill="#8ee6a5" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2.024489795918367 0,1.0244897959183674 z" />
+                                <path fill="#8ee6a5" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1.0244897959183674 1.7,2.024489795918367 z" />
+                            </g>
                         </g>
                     </g>
                 </svg>
